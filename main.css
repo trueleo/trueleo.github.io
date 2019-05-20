@@ -8,8 +8,7 @@
 }
 
 body {
-    background: url("./images/background.jpg") no-repeat center center;
-    background-size: cover;
+    background: url("./images/papyrus.png") repeat;
 }
 
 a, h1, h3, p {
@@ -255,10 +254,13 @@ nav {
 .card {
     margin: 1em 1em 1em 1em;
     display: inline-block;
-    height: 20em;
-    width: 20em;
-    background: #f3f3f3;
-    color: #3a3a3a;
+    font-family: 'Thasadith';
+    font-size: 24px;
+    height: 3em;
+    width: 3em;
+    padding: 5em;
+    background: #004ddd9c;
+    color: #1a1a1a;
 }
 
 footer {
