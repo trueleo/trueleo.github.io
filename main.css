@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Thasadith&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("./images/background.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+a, h1, h3, p {
+    font-family: "Thasadith", sans-serif;
+}
+
+header {
+    padding: 8px;
+    background-color: #0088aa;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;   
+}
+
+.header_left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header_name {
+    font-size: 3.2em;
+    margin-left: 40px;
+    font-family: "Lobster Two", cursive;
+    font-style: italic;
+    color: white;
+}
+
+.side-menu {
+    padding: 15px;
+}
+
+.header_right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav {
+    padding: 20px 10px;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+}
+
+.nav_links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 10px 10px;
+}
+
+.side-nav {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    margin-left: -300px;
+    top: 0;
+    left: 0;
+    background: #3a3a3a;
+    transition: 0.3s ease-out;
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -ms-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+}
+
+.side-nav {
+    z-index: 5;
+    overflow-x: hidden;
+}
+
+
+#side-nav-image {
+    width: 100%;
+    height: 20em;
+    background: url('./images/sidenav-bakground.png') no-repeat center center;
+    background-size: cover;
+}
+
+.side-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    display: block;
+}
+
+.btn-close {
+    position: absolute;
+    background-color: #3a3a3a;
+    right: 0;
+    top: 0;
+    padding: 19px 15px;
+    margin-left: 160px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.btn-close:hover {
+    background-color: red;
+}
+
+.side-nav__link {
+    padding: 10px 10px 10px 30px;
+}
+
+.side-nav__link:hover {
+    background-color: #1f1f1fb7;
+}
+
+.intro {
+    position: relative;
+}
+
+.intro-wall {
+    position: absolute;
+    width: 100%;
+    height: 32em;
+    background: url('./images/header-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    filter: brightness(0.7);
+    filter: contrast(0.4);
+    top: 0;
+    left: 0;
+    -webkit-filter: contrast(0.4);
+}
+
+.intro-left, .intro-right {
+    height: 32em;   
+    overflow: hidden;
+}
+
+.intro-left {
+    min-width: 400px;
+    width: 40%;
+    max-width: 700px;
+    float: left;
+    position: relative;
+}
+
+.layer-profile {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+}
+
+.layer-profile figure {
+    margin-left: 10%;
+    margin-right: 15%;
+    margin-top: 10%;
+    margin-bottom: 16%;
+    position: absolute;
+    width: 54%;
+    height: 0;
+    padding-bottom: 54%;
+    max-width: 400px;
+    min-width: 220px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.intro-shape {
+    position: absolute;
+    margin-top: 0px;
+    z-index: 1;
+    height: 100%;
+}
+
+.intro-shape img {
+    margin-top: -1px;
+    width: 100%;
+    height: 101%;
+    filter: hue-rotate(10deg);
+    -webkit-filter: hue-rotate(10deg);
+}
+
+.intro-right {
+    margin-left: 0px;
+    position: relative;
+    z-index: 2;
+}
+
+.intro h1 {
+    margin: 1em 10% 1.7em 10%;
+    text-align: right;
+    font-style: normal;
+    color: #ffffff;
+    font-weight: 24;
+    font-size: 73px;
+    line-height: 83px;
+    letter-spacing: 0.05em;
+}
+
+.short-about {
+    float: right;
+    margin-left: 15%;
+    margin-right: 10%;
+    max-width: 60em;
+    min-width: 10em;
+    padding: 20px 40px;
+    background-color: #363636c7;
+}
+
+.intro-right h1, .intro-right #quote {
+    display: block;    
+}
+
+.short-about p {
+    color: white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.short-about h3 {
+    margin-top: 20px;
+    color: white;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    text-align: right;
+}
+
+.content {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card {
+    margin: 1em 1em 1em 1em;
+    display: inline-block;
+    height: 20em;
+    width: 20em;
+    background: #f3f3f3;
+    color: #3a3a3a;
+}
+
+footer {
+    background: #3a3a3a;
+    position: absolute;
+    width: 100%;
+    bottom: 1;
+    right: 0;
+    left: 0;
+}
+
+.contact-footer {
+    margin: 2em 1em;
+    position: relative;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.message-container, .email-me-wrapper {
+  margin-right: 2em;
+  margin-left: 1em;
+  display: inline-block;
+}
+
+.message-container {
+    max-width: 35em; 
+    min-width: 10em;
+    width: 40%;
+}
+
+.message-form * {
+  display: inline-block;
+}
+
+.message-container h3 {
+    float: left;
+    font-size: 1.5em;
+    color: white;
+    font-weight: 500;
+}
+
+#message {
+    margin-top: 4.5em;
+    margin-bottom: 2em;
+    display: block;
+    width: 100%;
+    height: 12em;
+    resize: none;
+    background: #fffffff3;
+    border: 0 none;
+    border-color: transparent; 
+}
+
+#send {
+    float: right;
+    height: 2.4em;
+    width: 9em;
+    color: white;
+    font-weight: 400;
+    background-image: linear-gradient(45deg, #4524ff, #ff4e18);
+    cursor: pointer;
+    border: 0 none;
+    border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
+}
+
+.email-me {
+    padding: 1.7em 0em;
+}
+
+.email-me h3, .email-me h1 {
+    text-align: right;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.email-me h3 {
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.email-me h1 {
+    font-weight: 500;
+    font-size: 1.7em;
+    margin-top: 0.4em;
+}
+
+footer h3 {
+    font-size: 1.2em;
+    color: white;
+    font-weight: 400;
+    text-align: right;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
