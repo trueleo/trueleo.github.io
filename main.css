@@ -119,7 +119,7 @@ nav {
 
 #side-nav-image {
     width: 100%;
-    height: 20em;
+    height: 10em;
     background: url('./images/sidenav-background.png') no-repeat center center;
     background-size: cover;
 }
@@ -127,7 +127,7 @@ nav {
 .side-nav a {
     text-decoration: none;
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     display: block;
 }
 
@@ -137,7 +137,7 @@ nav {
     right: 0;
     top: 0;
     padding: 10px 10px;
-    margin-left: 160px;
+    margin-right: 0px;
 }
 
 .btn-close:hover {
@@ -153,27 +153,18 @@ nav {
 }
 
 .intro {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    position:relative;
     width: 100%;
-}
-
-.intro-wall {
-    position: absolute;
-    width: 100%;
-    height: 32em;
-    background-color: #707070;
     background: #3a3a3a url('./images/header-background-resized.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    filter: brightness(0.7);
-    filter: contrast(0.4);
-    top: 0;
-    left: 0;
-    -webkit-filter: contrast(0.4);
 }
 
 .intro-left, .intro-right {
+    display: inline-block;
     height: 32em;   
     overflow: hidden;
 }
@@ -182,7 +173,6 @@ nav {
     min-width: 23em;
     width: 40%;
     max-width: 42em;
-    float: left;
     position: relative;
 }
 
@@ -199,6 +189,7 @@ nav {
     margin-top: 10%;
     margin-bottom: 16%;
     position: absolute;
+    z-index: 2;
     width: 54%;
     height: 0;
     padding-bottom: 54%;
@@ -213,7 +204,6 @@ nav {
 .intro-shape {
     position: absolute;
     margin-top: 0px;
-    z-index: 1;
     height: 100%;
 }
 
@@ -225,10 +215,9 @@ nav {
     -webkit-filter: hue-rotate(10deg);
 }
 
+
 .intro-right {
-    margin-left: 0px;
-    position: relative;
-    z-index: 2;
+ width: 59%;
 }
 
 .intro h1 {
@@ -243,7 +232,6 @@ nav {
 
 
 .short-about {
-    float: right;
     margin-left: 15%;
     margin-right: 10%;
     max-width: 60em;
@@ -272,14 +260,15 @@ nav {
     text-align: right;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
     .intro h1 {
+        margin-left: 20px;
         margin-bottom: 1.5em;
         font-size: 3em;
     }
-
+    
     .short-about p {
-        font-size: 1.4em;
+        font-size: 1.3em;
     }
 
     .short-about h3 {
@@ -287,12 +276,25 @@ nav {
     }
 }
 
+@media screen and (max-width: 800px) {
+    .intro h1 {
+        margin-bottom: 1em;
+        font-size: 2.4em;
+    }
 
+    .short-about p {
+        font-size: 1.2em;
+    }
+
+    .short-about h3 {
+        font-size: 1em;
+    }
+}
 
 @media screen and (max-width: 750px) {
     .intro {
-        height: 100vh;
         width: 100vw;
+        flex-direction: column;
     }
 
     .intro-shape {
@@ -300,10 +302,13 @@ nav {
     }
     
     .intro-left, .intro-right {
+        flex: 1;
         overflow: unset;
         width: inherit;
         min-width: unset;
         max-width: unset;
+        min-height: 27em;
+        height: 24em;
     }
     
     .layer-profile {
@@ -400,9 +405,12 @@ footer {
     width: 40%;
 }
 
-.message-form * {
-    display: inline-block;
+#message-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
+
 
 .message-container h3 {
     float: left;
@@ -412,7 +420,7 @@ footer {
 }
 
 #message {
-    margin-top: 4.5em;
+    margin-top: 2em;
     margin-bottom: 2em;
     display: block;
     width: 100%;
@@ -424,7 +432,6 @@ footer {
 }
 
 #send {
-    float: right;
     height: 2.4em;
     width: 9em;
     color: white;
