@@ -104,7 +104,7 @@ nav {
 #side-nav-image {
     width: 100%;
     height: 20em;
-    background: url('./images/sidenav-bakground.png') no-repeat center center;
+    background: url('./images/sidenav-background.png') no-repeat center center;
     background-size: cover;
 }
 
@@ -140,7 +140,6 @@ nav {
 
 .intro {
     position: relative;
-    background: #3a3a3a;
 }
 
 .intro-wall {
@@ -148,7 +147,7 @@ nav {
     width: 100%;
     height: 32em;
     background-color: #707070;
-    background: #3a3a3a url('./images/header-background.jpg');
+    background: #3a3a3a url('./images/header-background-resized.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
