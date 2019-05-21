@@ -30,6 +30,19 @@ header {
     justify-content: flex-start;
 }
 
+@media (min-width: 65em) {
+    .header_left a {
+        display: none;
+    }
+}
+
+@media (max-width: 65em) {
+    .header_right nav {
+        display: none;
+    }
+}
+
+
 .header_name {
     font-size: 3.2em;
     margin-left: 40px;
@@ -174,8 +187,6 @@ nav {
     width: 54%;
     height: 0;
     padding-bottom: 54%;
-    max-width: 400px;
-    min-width: 220px;
     overflow: hidden;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -216,6 +227,7 @@ nav {
     letter-spacing: 0.05em;
 }
 
+
 .short-about {
     float: right;
     margin-left: 15%;
@@ -245,6 +257,81 @@ nav {
     font-size: 25px;
     text-align: right;
 }
+
+@media (max-width: 70em) {
+    .intro h1 {
+        margin-bottom: 1.5em;
+        font-size: 54px;
+    }
+
+    .short-about p {
+        font-size: 20px;
+    }
+
+    .short-about h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 55em) {
+    .intro-shape {
+        display: none;
+    }
+
+    .intro-right {
+        width: 100%;
+    }
+    
+    .intro-left {
+        overflow: unset;
+        width: 100%;
+        min-width: unset;
+        max-width: unset;
+    }
+
+    .short-about {
+        margin-top: 5em;
+    }
+
+    .layer-profile {
+        position: relative;
+        top: 2em;
+        margin: 0 auto;
+        width: 40%;
+        height: 100%;
+        min-width: 16em;
+    }
+
+    .layer-profile figure {
+        margin: unset;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    .intro-left, .intro-right {
+        height: 46vh;
+        display: block;
+    }
+
+    .intro-wall {
+        height: 100%;
+    }
+
+    .intro h1 {
+        text-align: center;
+        margin: unset;
+        letter-spacing: 0.03em;
+        font-size: 80px;
+    }
+
+    .short-about {
+        position: relative;
+        margin: 4em auto;
+        float: unset;
+    }
+
+}
+
 
 .content {
     width: 90%;
@@ -296,7 +383,7 @@ footer {
 }
 
 .message-form * {
-  display: inline-block;
+    display: inline-block;
 }
 
 .message-container h3 {
@@ -362,4 +449,20 @@ footer h3 {
     text-align: right;
     padding-bottom: 20px;
     padding-right: 20px;
+}
+
+@media (max-width: 70em) {
+    .contact-footer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .message-container, .email-me-wrapper{
+         width: 90%;   
+         max-width: 100%;  
+    }   
+
+    .email-me h1, .email-me h3 {
+        text-align: left;
+    }
 }
