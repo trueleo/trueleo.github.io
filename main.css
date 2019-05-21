@@ -16,7 +16,7 @@ a, h1, h3, p {
 }
 
 header {
-    padding: 8px;
+    padding: 5px;
     background-color: #0088aa;
 }
 
@@ -30,13 +30,13 @@ header {
     justify-content: flex-start;
 }
 
-@media (min-width: 65em) {
+@media (min-width: 750px) {
     .header_left a {
         display: none;
     }
 }
 
-@media (max-width: 65em) {
+@media (max-width: 750px) {
     .header_right nav {
         display: none;
     }
@@ -51,8 +51,10 @@ header {
     color: white;
 }
 
-.side-menu {
-    padding: 15px;
+.side-menu-icon {
+    padding: 2px;
+    margin-top: 7px;
+    margin-left: 7px;
 }
 
 .header_right {
@@ -78,6 +80,20 @@ nav {
     font-size: 1.3em;
     font-weight: 600;
     padding: 10px 10px;
+}
+
+@media (max-width: 750px) {
+
+    .header_name {
+        font-size: 2em;
+        padding: 2px;
+    }
+
+    #github {
+        width: 46px;
+        height: 46px;
+        padding: 2px;
+    }
 }
 
 .side-nav {
@@ -111,7 +127,7 @@ nav {
 .side-nav a {
     text-decoration: none;
     color: white;
-    font-size: 22px;
+    font-size: 24px;
     display: block;
 }
 
@@ -120,10 +136,8 @@ nav {
     background-color: #3a3a3a;
     right: 0;
     top: 0;
-    padding: 19px 15px;
+    padding: 10px 10px;
     margin-left: 160px;
-    font-size: 40px;
-    font-weight: 600;
 }
 
 .btn-close:hover {
@@ -131,7 +145,7 @@ nav {
 }
 
 .side-nav__link {
-    padding: 10px 10px 10px 30px;
+    padding: 0.7em 15px 0.7em 40px;
 }
 
 .side-nav__link:hover {
@@ -140,6 +154,7 @@ nav {
 
 .intro {
     position: relative;
+    width: 100%;
 }
 
 .intro-wall {
@@ -164,9 +179,9 @@ nav {
 }
 
 .intro-left {
-    min-width: 400px;
+    min-width: 23em;
     width: 40%;
-    max-width: 700px;
+    max-width: 42em;
     float: left;
     position: relative;
 }
@@ -217,13 +232,12 @@ nav {
 }
 
 .intro h1 {
-    margin: 1em 10% 1.7em 10%;
+    margin: 3rem 10% 4rem 10%;
     text-align: right;
     font-style: normal;
     color: #ffffff;
     font-weight: 24;
-    font-size: 73px;
-    line-height: 83px;
+    font-size: 4rem;
     letter-spacing: 0.05em;
 }
 
@@ -246,7 +260,7 @@ nav {
     color: white;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 1.3em;
 }
 
 .short-about h3 {
@@ -254,30 +268,32 @@ nav {
     color: white;
     font-style: normal;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 1.7em;
     text-align: right;
 }
 
-@media (max-width: 70em) {
+@media (max-width: 900px) {
     .intro h1 {
         margin-bottom: 1.5em;
-        font-size: 54px;
+        font-size: 3em;
     }
 
     .short-about p {
-        font-size: 20px;
+        font-size: 1.2em;
     }
 
     .short-about h3 {
-        font-size: 20px;
+        font-size: 1.2em;
     }
 }
 
-@media (max-width: 55em) {
+
+
+@media (max-width: 750px) {
     .intro-shape {
         display: none;
     }
-
+    
     .intro-right {
         width: 100%;
     }
@@ -288,50 +304,68 @@ nav {
         min-width: unset;
         max-width: unset;
     }
-
+    
     .short-about {
         margin-top: 5em;
     }
-
+    
     .layer-profile {
         position: relative;
-        top: 2em;
+        top: 10px ;
         margin: 0 auto;
-        width: 40%;
+        width: 30%;
         height: 100%;
-        min-width: 16em;
+        min-width: 14em;
     }
-
+    
     .layer-profile figure {
         margin: unset;
         width: 100%;
         padding-bottom: 100%;
     }
-
+    
     .intro-left, .intro-right {
         height: 46vh;
         display: block;
     }
-
+    
+    .intro-left {
+        height: 35vh;
+    }
+    
     .intro-wall {
         height: 100%;
     }
-
+    
     .intro h1 {
         text-align: center;
         margin: unset;
         letter-spacing: 0.03em;
-        font-size: 80px;
+        font-size: 3em;
     }
-
+    
     .short-about {
         position: relative;
-        margin: 4em auto;
+        margin: 3em auto;
         float: unset;
     }
-
+    
 }
 
+@media (max-width: 500px) {
+    .intro h1 {
+        margin-bottom: 1.5em;
+        font-size: 2em;
+    }
+
+    .short-about p {
+        font-size: 1em;
+    }
+
+    .short-about h3 {
+        font-size: 1.1em;
+    }
+}
 
 .content {
     width: 90%;
