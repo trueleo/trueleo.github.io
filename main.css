@@ -30,13 +30,13 @@ header {
     justify-content: flex-start;
 }
 
-@media (min-width: 750px) {
+@media screen and (min-width: 750px) {
     .header_left a {
         display: none;
     }
 }
 
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
     .header_right nav {
         display: none;
     }
@@ -82,7 +82,7 @@ nav {
     padding: 10px 10px;
 }
 
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
 
     .header_name {
         font-size: 2em;
@@ -272,26 +272,25 @@ nav {
     text-align: right;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .intro h1 {
         margin-bottom: 1.5em;
         font-size: 3em;
     }
 
     .short-about p {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     .short-about h3 {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 }
 
 
 
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
     .intro {
-        font-size: 0.7rem;
         height: 100vh;
         width: 100vw;
     }
@@ -336,7 +335,7 @@ nav {
         text-align: center;
         margin: unset;
         letter-spacing: 0.03em;
-        font-size: 3em;
+        font-size: 2.7em;
     }
     
     .short-about {
@@ -347,18 +346,18 @@ nav {
     
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
     .intro h1 {
         margin-bottom: 1.5em;
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     .short-about p {
-        font-size: 1em;
+        font-size: 1.2rem;
     }
 
     .short-about h3 {
-        font-size: 1.1em;
+        font-size: 1.3rem;
     }
 }
 
@@ -366,15 +365,8 @@ nav {
     width: 90%;
     margin: 2rem auto;
     background: #696969;
-    border-radius: 5%;
     text-align: center;
     height: 50vh;
-    filter: drop-shadow(5px 6px 3px #292929d0 );
-    -webkit-border-radius: 5%;
-    -moz-border-radius: 5%;
-    -ms-border-radius: 5%;
-    -o-border-radius: 5%;
-    -webkit-filter: drop-shadow(5px 6px 3px #292929d0 );
 }
 
 footer {
@@ -477,7 +469,7 @@ footer h3 {
     padding-right: 20px;
 }
 
-@media (max-width: 950px) {
+@media screen and (max-width: 950px) {
     .message-container h3 {
         font-size: 1.2em;
     }
@@ -491,15 +483,14 @@ footer h3 {
     }
 }
 
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
     .contact-footer {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
     }
     .message-container, .email-me-wrapper{
-         width: 90%;   
-         max-width: 100%;  
+         width: 100%;     
     }   
 
     .email-me h1, .email-me h3 {
