@@ -303,6 +303,7 @@ nav {
 @media screen and (max-width: 750px) {
     .intro {
         width: 100vw;
+        min-height: 40em;
         flex-direction: column;
     }
 
@@ -311,13 +312,16 @@ nav {
     }
     
     .intro-left, .intro-right {
-        flex: 1;
         overflow: unset;
         width: inherit;
         min-width: unset;
         max-width: unset;
-        min-height: 27em;
+        min-height: 20em;
+    }
+
+    .intro-left {
         height: 24em;
+        min-height: 23em;
     }
     
     .layer-profile {
@@ -337,12 +341,7 @@ nav {
     
     .intro-left, .intro-right {
         position: relative;
-        height: 50vh;
         display: inline-block;
-    }
-    
-    .intro-wall {
-        height: 100%;
     }
     
     .intro h1 {
