@@ -17,6 +17,10 @@ a, h1, h3, p {
 
 header {
     padding: 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
     background-color: #0088aa;
 }
 
@@ -30,8 +34,18 @@ header {
     justify-content: flex-start;
 }
 
+#side-menu-link {
+    display: grid;
+    place-content: center;    
+}
+
+.side-menu-icon {
+    padding: 10px;
+}
+
+
 @media screen and (min-width: 750px) {
-    .header_left a {
+    #side-menu-link {
         display: none;
     }
 }
@@ -51,11 +65,7 @@ header {
     color: white;
 }
 
-.side-menu-icon {
-    padding: 2px;
-    margin-top: 7px;
-    margin-left: 7px;
-}
+
 
 .header_right {
     display: flex;
@@ -63,7 +73,7 @@ header {
 }
 
 nav {
-    padding: 20px 10px;
+    padding: 1.1em 0.9em;
 }
 
 .nav_links {
@@ -80,13 +90,26 @@ nav {
     font-size: 1.3em;
     font-weight: 600;
     padding: 10px 10px;
+    transition: 200ms ease;
+    -webkit-transition: 200ms ease;
+    -moz-transition: 200ms ease;
+    -ms-transition: 200ms ease;
+    -o-transition: 200ms ease;
+}
+
+.nav_links a:hover {
+    box-shadow: 0 10px 0 -7px #00ff00a6;
+}
+
+#gitlink {
+    clip-path: circle(45%);
 }
 
 @media screen and (max-width: 750px) {
 
     .header_name {
         font-size: 2em;
-        padding: 2px;
+        margin: auto 1em;
     }
 
     #github {
@@ -155,12 +178,14 @@ nav {
 .intro {
     display: flex;
     justify-content: space-between;
-    position:relative;
+    margin-top: 4.8em;
+    position: relative;
     width: 100%;
     background: #3a3a3a url('./images/header-background-resized.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    box-shadow: -4px 0px 8px 0 #000000e1;
 }
 
 .intro-left, .intro-right {
@@ -172,7 +197,7 @@ nav {
 .intro-left {
     min-width: 23em;
     width: 40%;
-    max-width: 42em;
+    max-width: 38em;
     position: relative;
 }
 
@@ -184,21 +209,22 @@ nav {
 }
 
 .layer-profile figure {
-    margin-left: 10%;
-    margin-right: 15%;
-    margin-top: 10%;
-    margin-bottom: 16%;
-    position: absolute;
-    z-index: 2;
-    width: 54%;
+    display: block;
+    margin: 6em 16%;
+    width: 50%;
     height: 0;
-    padding-bottom: 54%;
+    padding-bottom: 50%;
     clip-path: circle(50%);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+
+}
+
+#profile-pic {
+    margin-top: -0.7em;
 }
 
 .intro-shape {
@@ -212,7 +238,6 @@ nav {
     width: 100%;
     height: 101%;
     filter: hue-rotate(10deg);
-    -webkit-filter: hue-rotate(10deg);
 }
 
 .intro h1 {
@@ -301,6 +326,7 @@ nav {
 }
 
 @media screen and (max-width: 750px) {
+    
     .intro {
         width: 100vw;
         min-height: 40em;
@@ -328,9 +354,9 @@ nav {
         position: relative;
         top: 2rem;
         margin: 0 auto;
-        width: 40%;
+        width: 30%;
         height: 100%;
-        min-width: 14em;
+        min-width: 18em;
     }
     
     .layer-profile figure {
@@ -453,7 +479,7 @@ footer {
     width: 9em;
     color: white;
     font-weight: 400;
-    background-image: linear-gradient(45deg, #4524ff, #ff4e18);
+    background: linear-gradient(45deg, #4524ff, #ff4e18);
     cursor: pointer;
     border: 0 none;
     border-radius: 0.2em;
@@ -461,7 +487,18 @@ footer {
     -moz-border-radius: 0.2em;
     -ms-border-radius: 0.2em;
     -o-border-radius: 0.2em;
+    transition: 100ms ease-in;
+    -webkit-transition: 100ms ease-in;
+    -moz-transition: 100ms ease-in;
+    -ms-transition: 100ms ease-in;
+    -o-transition: 100ms ease-in;
 }
+
+#send:hover {
+    background-image: linear-gradient(45deg, #2600ff, #ff764d);
+}
+
+
 
 .email-me {
     padding: 1.7em 0em;
@@ -484,7 +521,7 @@ footer {
     margin-top: 0.4em;
 }
 
-footer h3 {
+#copyright-section {
     font-size: 1.2em;
     color: white;
     font-weight: 400;
@@ -519,5 +556,142 @@ footer h3 {
 
     .email-me h1, .email-me h3 {
         text-align: left;
+    }
+    #copyright-section {
+        font-size: 1em
+    }
+}
+    margin-top: 0.4em;
+}
+
+#copyright-section {
+    font-size: 1.2em;
+    color: white;
+    font-weight: 400;
+    text-align: right;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+@media screen and (max-width: 950px) {
+    .message-container h3 {
+        font-size: 1.2em;
+    }
+    #send {
+        width: 7em;
+        height: 2.1em;
+    }
+
+    .email-me h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .contact-footer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .message-container, .email-me-wrapper{
+         width: 100%;     
+    }   
+
+    .email-me h1, .email-me h3 {
+        text-align: left;
+    }
+    #copyright-section {
+        font-size: 1em
+    }
+}
+}
+
+#copyright-section {
+    font-size: 1.2em;
+    color: white;
+    font-weight: 400;
+    text-align: right;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+@media screen and (max-width: 950px) {
+    .message-container h3 {
+        font-size: 1.2em;
+    }
+    #send {
+        width: 7em;
+        height: 2.1em;
+    }
+
+    .email-me h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .contact-footer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .message-container, .email-me-wrapper{
+         width: 100%;     
+    }   
+
+    .email-me h1, .email-me h3 {
+        text-align: left;
+    }
+    #copyright-section {
+        font-size: 1em
+    }
+}
+    margin-top: 0.4em;
+}
+
+#copyright-section {
+    font-size: 1.2em;
+    color: white;
+    font-weight: 400;
+    text-align: right;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+@media screen and (max-width: 950px) {
+    .message-container h3 {
+        font-size: 1.2em;
+    }
+    #send {
+        width: 7em;
+        height: 2.1em;
+    }
+
+    .email-me h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .contact-footer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .message-container, .email-me-wrapper{
+         width: 100%;     
+    }   
+
+    .email-me h1, .email-me h3 {
+        text-align: left;
+    }
+    #copyright-section {
+        font-size: 1em
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contact-footer {
+        font-size: 14px;
     }
 }
