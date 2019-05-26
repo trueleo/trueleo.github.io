@@ -147,3 +147,13 @@ a, h1, h3, p {
 .main-container:nth-last-child(n) {
     padding-bottom: 4em;
 }
+
+@media screen and (max-width: 650px) {
+    .main-container {
+        font-size: 12px;
+    }
+    
+    .logo h1 {
+        font-size: 1.2em;
+    }
+}
