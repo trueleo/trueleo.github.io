@@ -204,8 +204,13 @@ a, h1, h3, p {
     }
 
     .concept-content, .concept-image {
+        padding: 0;
         display: block;
         margin: 0 auto;
+        text-align: center;
+    }
+
+    .concept-content h1 {
         text-align: center;
     }
 
