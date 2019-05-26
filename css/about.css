@@ -42,55 +42,56 @@ a, h1, h3, p {
 
 .main-container {
     width: 100%;
-    margin-top: 7em;
+    max-width: 100em;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    margin: 0 auto;
+    margin-top: 7rem;
+}
+
+.introduction {
+    display: block;
+    margin: 2em auto 0 auto;
+    width: 70%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.introduction h3 {
+    font-family: 'Poppins';
+}
+
+.introduction #wait {
+    font-size: 2em;    
+}
+
+.header {
+    display: flex;
+    justify-content: center;
 }
 
 .header h3 {
-    display: block;
+    flex-grow: 0;
     text-align: center;
     font-size: 2em;
     font-family: 'Lobster Two', cursive;
     font-weight: 200;
 }
 
-.header h3::before, h3::after {
-    content: '';
-    position: absolute;
-    z-index: 2;
-    top: calc(8.9rem - 10px);
+.header #before, .header #after {
     background: #003223ad;
-    width: 40%;
-    height: 2px;
-}
-
-@media screen and (max-width: 1200px) {
-    .header h3::before, h3::after {
-        width: 30%;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .header h3::before, h3::after {
-        width: 15%;
-    }
+    height: 0.1rem;
+    flex-grow: 1;
+    margin: auto 2em;
 }
 
 
-.header h3::before {
-    left: 0;
-    margin-left: 2em;
-}
-
-.header h3::after {
-    right: 0; 
-    margin-right: 2em; 
-}
 
 .concept {
-    margin: 7em 5em; 
+    margin: 7em auto; 
     display: flex;
     justify-content: space-between;
-    max-height: 40em;
 }
 
 .concept:nth-child(odd) {
@@ -125,16 +126,51 @@ a, h1, h3, p {
 
 .concept-image {
     margin: 0 1em;
-    flex: 5;
+    flex: 9;
     max-height: 40em;
-    max-width: 40em;
+    max-width: 50em;
     overflow: hidden;
 }
 
 .concept-image img {
     width: 100%;
+    min-width: 100%;
     height: 100%;
+    vertical-align: middle;
+    margin: auto;
 }
+
+
+.more {
+    width: 100%;
+    display: flex;
+    background: #0065c4 ;
+    justify-content: center;
+    margin: 1em auto;
+}
+
+.more h1 {
+    margin: auto 0;
+    margin-right: 3em;
+    color: azure;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 2em;
+}
+
+.more .contact-link {
+    padding: 2em;
+    background: #00b47e;
+}
+
+.more a {
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
 
 @media screen and (max-width: 1200px) {
     .concept {
@@ -155,7 +191,35 @@ a, h1, h3, p {
 }
 
 @media screen and (max-width: 700px) {
+
+    .introduction {
+         font-size: 20px;
+    }
+
     .concept {
-        font-size: 10px;
+        margin: 3em 1em;
+        padding: 3rem;
+        display: block;
+        font-size: 11px;
+    }
+
+    .concept-content, .concept-image {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .concept:nth-child(even),  .concept:nth-child(odd) {
+        flex-direction: column;
+    }
+    
+    .more {
+        flex-direction: column;
+    }
+
+    .more h1, .more a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
     }
 }
