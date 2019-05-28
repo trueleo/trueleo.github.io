@@ -89,13 +89,13 @@ a, h1, h3, p {
 
 
 .concept {
-    margin: 7em auto; 
+    margin: 6em auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
 }
 
 .concept:nth-child(odd) {
-    flex-direction: row-reverse;   
+    flex-direction: row-reverse;
 }
 
 @media screen and (min-width: 1100px) {
@@ -208,6 +208,9 @@ a, h1, h3, p {
         display: block;
         margin: 0 auto;
         text-align: center;
+    }
+    .concept-image {
+        margin-top: 1rem;
     }
 
     .concept-content h1 {
