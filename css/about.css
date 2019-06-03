@@ -195,8 +195,7 @@ a, h1, h3, p {
     }
 
     .concept {
-        margin: 3em 1em;
-        padding: 3rem;
+        margin: 3.6em auto;
         display: block;
         font-size: 11px;
     }
