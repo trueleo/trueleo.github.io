@@ -25,7 +25,6 @@ a, h1, h3, p {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    box-shadow: -4px 0px 8px 0 #000000e1;
 }
 
 .intro-left, .intro-right {
