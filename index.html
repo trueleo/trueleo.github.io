@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satyam Singh</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header>
+    <a id="nav_home" onclick="javascript:gotolink('home');">home</a>
+    <a id="nav_about" onclick="javascript:gotolink('about');">about</a>
+    <a id="nav_contact" onclick="javascript:gotolink('contact');">contact</a>
+</header>
+<article class="scroller">
+<section id="home">
+    <h4 class="barcode">
+        trueleo
+    </h3>
+    <img src="./assets/leopfp.png" alt="avatar">
+    <div>
+        <h1>Satyam Singh</h1>
+        <p>Hi, I am a student, developer and designer who is currently living in Raipur City, Chhattisgarh.
+         I like creating new things and have a genuine liking for digital products and opensource. </p>
+    </div>
+</section>
+<section id="about">
+     <h1 class="leftheader">about</h1>
+        <div class="left">
+            <h2>
+                Proficient in writing
+            </h2>
+            <ul>
+                <li> Python </li>
+                <li> Vue </li>
+                <li> JavaScript </li>
+                <li> C++ </li>
+                <li> Java </li>
+            </ul>
+        </div>
+        <div class="right">
+            <img src="./assets/earth.svg" alt="">
+        </div>
+</section>
+<section id="contact">
+    <h1 class="leftheader">Contact</h1>
+    <div class="cards">
+        <div class="contact"><img src="./assets/linkedin-logo.png" alt="">LinkedIn</div>
+        <div class="contact"><img src="./assets/telegram-logo.svg" alt="">Telegram</div>
+        <div class="contact"><img src="./assets/protonmail-sign-white.svg" alt="">Email</div>
+        <div class="contact"><img src="./assets/github.png" alt="">Github</div>
+    </div>
+    <div class="footer">
+    </div>
+</section>
+</article>
+
+<script>
+    var nav = {
+        'home': document.getElementById('nav_home'),
+        'about': document.getElementById('nav_about'),
+        'contact': document.getElementById('nav_contact')
+    }
+
+    let options = {
+        root: document.querySelector('.scroller'),
+        rootMargin: '-20px',
+        // threshold: 0.7
+    }
+
+    const sectionHomeObserver = new IntersectionObserver(function(
+    entries,
+    sectionHomeObserver)
+    {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                nav['home'].classList.add('active')
+            }
+            if(!entry.isIntersecting) {
+                nav['home'].classList.remove('active')
+            }
+        })
+    },options)
+
+    const sectionTechObserver = new IntersectionObserver(function(
+    entries,
+    sectionTechObserver)
+    {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                nav['about'].classList.add('active')
+            }
+            else if(!entry.isIntersecting) {
+                nav['about'].classList.remove('active')
+            }
+        })
+    }, options)
+    const sectionContactObserver = new IntersectionObserver(function(
+    entries,
+    sectionContactObserver)
+    {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                nav['contact'].classList.add('active')
+            }
+            else if(!entry.isIntersecting) {
+                nav['contact'].classList.remove('active')
+            }
+        })
+    }, options)
+
+    sectionHomeObserver.observe(document.getElementById('home'))
+    sectionTechObserver.observe(document.getElementById('about'))
+    sectionContactObserver.observe(document.getElementById('contact'))
+
+    function gotolink(section) {
+        for (const key in nav) {
+            if (nav.hasOwnProperty(key)) {
+                const element = nav[key];
+                element.classList.remove('active')
+            }
+        }
+        // var htmlobj = nav[section]
+        // htmlobj.classList.add('active')
+
+        // htmlobj.innerHTML = ( htmlobj.innerHTML == section ) ? '' : section;
+        document.querySelector('#'+section).scrollIntoView({behavior: 'smooth'});
+   }
+</script>
+</body>
+</html>
