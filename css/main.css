@@ -119,8 +119,7 @@ header a.active {
 
 @media screen and (max-width: 900px) {
   .leftheader {
-    top: 1.5em;
-    left: 1em;
+    display: none;
   }
 }
 
@@ -181,7 +180,7 @@ header a.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 50em;
+  width: clamp(200px, 75%, 500px);
   justify-self: left;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -237,11 +236,12 @@ header a.active {
         align-content: center;
   }
   #home img {
-    height: calc(20vw + 8em);
-    width: calc(20vw + 8em);
+    height: calc(18vw + 7em);
+    width: calc(18vw + 7em);
     border: 5px solid white;
     -webkit-box-shadow: -4vw 0 #92929246;
             box-shadow: -4vw 0 #92929246;
+    margin-top: -10%;
   }
   #home .barcode {
     display: none;
@@ -256,10 +256,15 @@ header a.active {
   #home div h1 {
     font-size: calc(3vw + 1.3em);
     margin: 1em auto 20px auto;
+    letter-spacing: 1px;
   }
   #home div p {
     margin: 0 auto;
-    width: clamp(200px, 80%, 500px);
+    padding: 0;
+    text-align: center;
+  }
+  #home div p::before {
+    display: none;
   }
 }
 
@@ -343,36 +348,40 @@ header a.active {
 
 @media screen and (max-width: 900px) {
   #about {
-    -ms-grid-rows: 12% min-content 10px auto;
-        grid-template-rows: 12% -webkit-min-content 10px auto;
-        grid-template-rows: 12% min-content 10px auto;
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
-    row-gap: 1vh;
-        grid-template-areas: ".     " "left  " ".     " "right ";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   #about .left {
-    -ms-grid-column-align: stretch;
-        justify-self: stretch;
-    -ms-flex-item-align: start;
-        -ms-grid-row-align: start;
-        align-self: start;
+    -ms-grid-column-align: unset;
+        justify-self: unset;
+    -ms-flex-item-align: unset;
+        -ms-grid-row-align: unset;
+        align-self: unset;
     padding: unset;
-    font-size: 0.9em;
+    font-size: 0.75em;
     padding-left: 10%;
   }
   #about .left h2 {
     margin: 0;
+    padding-right: 30px;
   }
   #about .left ul {
     padding: unset;
     margin-left: 1.2rem;
   }
   #about .right {
-    margin-top: -8em;
     height: calc(27vw + 5em);
     width: calc(27vw + 5em);
     border: 6px solid rgba(59, 59, 59, 0.151);
+    margin-top: -10%;
   }
 }
 
@@ -419,8 +428,11 @@ header a.active {
 }
 
 @media screen and (max-width: 900px) {
+  #contact .cards {
+    top: 23%;
+  }
   #contact .cards .contact {
-    font-size: 1.6em;
+    font-size: calc(2em*0.8);
   }
 }
 

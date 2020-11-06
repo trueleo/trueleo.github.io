@@ -105,8 +105,7 @@ header {
 
     user-select: none;
     @media screen and (max-width: 900px){
-        top: 1.5em;
-        left: 1em;
+        display: none;
     }
 }
 
@@ -161,7 +160,7 @@ header {
     div {
         grid-area: divspace;
         display: flex;
-        max-width: 50em;
+        width: clamp(200px, 75%, 500px);
         justify-self: left;
         flex-direction: column;
         justify-content: center;
@@ -201,11 +200,12 @@ header {
         align-content: center;
 
         img {
-            $size: calc(20vw + 8em);
+            $size: calc(18vw + 7em);
             height: $size;
             width: $size;
             border: 5px solid white;
             box-shadow: -4vw 0 #92929246;
+            margin-top: -10%;
         }
 
         .barcode{
@@ -220,11 +220,16 @@ header {
             h1 {
                 font-size: calc(3vw + 1.3em);
                 margin: 1em auto 20px auto ;
+                letter-spacing: 1px;
             }
 
             p {
                 margin: 0 auto;
-                width: clamp(200px, 80%, 500px);
+                padding: 0;
+                text-align: center;
+            }
+            p::before {
+                display: none;
             }
         }
     }
@@ -294,24 +299,19 @@ header {
 
     @media screen and (max-width: 900px){
 
-        grid-template-rows: 12% min-content 10px auto;
-        grid-template-columns: auto;
-        row-gap: 1vh;
-
-        grid-template-areas:
-        ".     "
-        "left  "
-        ".     "
-        "right ";
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
 
         .left {
-            justify-self: stretch;
-            align-self: start;
+            justify-self: unset;
+            align-self: unset;
             padding: unset;
-            font-size: 0.9em;
+            font-size: 0.75em;
             padding-left: 10%;
             h2 {
                 margin: 0;
+                padding-right: 30px;
             }
             ul{
                 padding: unset;
@@ -320,11 +320,11 @@ header {
         }
 
         .right {
-            margin-top: -8em;
             $size: calc(27vw + 5em);
             height: $size;
             width: $size;
             border: 6px solid rgba(59, 59, 59, 0.151);
+            margin-top: -10%;
         }
     }
 }
@@ -357,9 +357,12 @@ header {
                 user-select: none;
             }
 
-            @media screen and (max-width: 900px){
-                font-size: $size * 0.8;
+        }
+        @media screen and (max-width: 900px){
+            .contact {
+                font-size: calc(2em*0.8);
             }
+            top: 23%;
         }
     }
 
