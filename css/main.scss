@@ -7,32 +7,35 @@ $contactcolor: #233644;
 $navbackground: #ffffff;
 
 
-body {
+html,
+body,
+.scroller,
+section {
+    height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', Georgia, 'Times New Roman', Times, serif;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Georgia, 'Times New Roman', Times, serif;
     font-size: clamp(16px, 0.9vw, 32px);
 }
 
 header {
+    top: 1em;
+    right: 1.7em;
+
     position: fixed;
-    top: 3em;
-    right: 2em;
     z-index: 2;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: fit-content;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
 
     a {
+        font-weight: 400;
         user-select: none;
         max-width: 300px;
         width: fit-content;
@@ -65,44 +68,35 @@ header {
     @media screen and (max-width: 900px) {
         top: unset;
         right: 1em;
-        bottom: 0em;
-        font-size: 0.9em;
+        bottom: 1em;
+        font-size: 0.8em;
     }
 
 }
 
 .scroller {
-    height: 100vh;
-    width: 100%;
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
 
     section {
-        padding: 0;
-        margin: 0;
         color: white;
         position: relative;
-        scroll-snap-align: start ;
-        height: 100vh;
-        width: 100%;
+        scroll-snap-align: start;
     }
 }
 
 .leftheader {
     margin: 0;
+    padding: 0;
+    font-weight: 300;
+    letter-spacing: 2px;
     $fontsize: 1.4em;
     font-size: $fontsize;
     position: absolute;
-    top: 3em*0.71;
+    top: calc((1em + 0.5em)*0.71);
     left: 2em;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-
     user-select: none;
     @media screen and (max-width: 900px){
         display: none;
@@ -110,7 +104,6 @@ header {
 }
 
 #home {
-    font-size: 1em;
     background-color: $homecolor;
 
     display: grid;
@@ -160,7 +153,7 @@ header {
     div {
         grid-area: divspace;
         display: flex;
-        width: clamp(200px, 75%, 500px);
+        width: 90%;
         justify-self: left;
         flex-direction: column;
         justify-content: center;
@@ -214,20 +207,23 @@ header {
         }
 
         div {
-            font-size: 0.8em;
             align-self: center;
+            width: 78%;
+            max-width: 500px;
 
             h1 {
-                font-size: calc(3vw + 1.3em);
+                font-size: calc(3vw + 1.1em);
                 margin: 1em auto 20px auto ;
                 letter-spacing: 1px;
             }
 
             p {
+                font-size: 0.9em;
                 margin: 0 auto;
                 padding: 0;
                 text-align: center;
             }
+
             p::before {
                 display: none;
             }
@@ -264,8 +260,8 @@ header {
                 font-size: 1.2em;
             }
             li {
-                margin-bottom: 0.4rem;
-                padding-left: 0.3rem;
+                margin-bottom: 0.4em;
+                padding-left: 0.3em;
             }
         }
     }
@@ -302,18 +298,21 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        padding-bottom: 4em;
 
         .left {
             justify-self: unset;
             align-self: unset;
             padding: unset;
-            font-size: 0.75em;
             padding-left: 10%;
+            font-size: 0.7rem;
             h2 {
+                // font-size: 2em;
                 margin: 0;
                 padding-right: 30px;
             }
             ul{
+                // font-size: 1.2em;
                 padding: unset;
                 margin-left: 1.2rem ;
             }
@@ -359,10 +358,17 @@ header {
 
         }
         @media screen and (max-width: 900px){
-            .contact {
-                font-size: calc(2em*0.8);
-            }
             top: 23%;
+            left: 10%;
+            transform: unset;
+            -webkit-transform: unset;
+            -moz-transform: unset;
+            -ms-transform: unset;
+            -o-transform: unset;
+
+            .contact{
+                font-size: 1.3em;
+            }
         }
     }
 
