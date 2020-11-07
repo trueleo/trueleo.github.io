@@ -413,6 +413,7 @@ header a.active {
           align-items: center;
   font-size: 2em;
   margin-bottom: 0.9em;
+  position: relative;
 }
 
 #contact .cards .contact img {
@@ -422,6 +423,13 @@ header a.active {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+#contact .cards .contact .cardlink {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 900px) {

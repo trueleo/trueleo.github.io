@@ -349,13 +349,19 @@ header {
             align-items: center;
             font-size: $size;
             margin-bottom: 0.9em;
-
+            position: relative;
             img {
                 height: $size * 0.8;
                 margin-right: $size * 0.5;
                 user-select: none;
             }
 
+            .cardlink {
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
         }
         @media screen and (max-width: 900px){
             top: 23%;
