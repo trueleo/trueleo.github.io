@@ -19,18 +19,18 @@
     </h3>
     <img src="./assets/leopfp.png" alt="avatar">
     <div>
-        <h1>Satyam Singh</h1>
-        <p>Hi, I am a student, developer and designer who is currently living in Raipur City, Chhattisgarh.
+        <h1 class="hidden">Satyam Singh</h1>
+        <p class="hidden">Hi, I am a student, developer and designer who is currently living in Raipur City, Chhattisgarh.
          I like creating new things and have a genuine liking for digital products and opensource. </p>
     </div>
 </section>
 <section id="about">
      <h1 class="leftheader">about</h1>
         <div class="left">
-            <h2>
+            <h2 class="hidden">
                 Proficient in writing
             </h2>
-            <ul>
+            <ul class="hidden">
                 <li> Python </li>
                 <li> Vue </li>
                 <li> JavaScript </li>
@@ -78,6 +78,12 @@
         'contact': document.getElementById('nav_contact')
     }
 
+    var sections = {
+        'home': document.getElementById('home'),
+        'about': document.getElementById('about'),
+        'contact': document.getElementById('contact')
+    }
+
     let options = {
         root: document.querySelector('.scroller'),
         rootMargin: '-20px',
@@ -91,9 +97,11 @@
         entries.forEach(entry => {
             if(entry.isIntersecting) {
                 nav['home'].classList.add('active')
+                sections['home'].classList.add('show')
             }
             if(!entry.isIntersecting) {
                 nav['home'].classList.remove('active')
+                sections['home'].classList.remove('show')
             }
         })
     },options)
@@ -105,12 +113,15 @@
         entries.forEach(entry => {
             if(entry.isIntersecting) {
                 nav['about'].classList.add('active')
+                sections['about'].classList.add('show')
             }
             else if(!entry.isIntersecting) {
                 nav['about'].classList.remove('active')
+                sections['about'].classList.remove('show')
             }
         })
     }, options)
+
     const sectionContactObserver = new IntersectionObserver(function(
     entries,
     sectionContactObserver)
@@ -118,9 +129,11 @@
         entries.forEach(entry => {
             if(entry.isIntersecting) {
                 nav['contact'].classList.add('active')
+                sections['contact'].classList.add('show')
             }
             else if(!entry.isIntersecting) {
                 nav['contact'].classList.remove('active')
+                sections['contact'].classList.remove('show')
             }
         })
     }, options)
