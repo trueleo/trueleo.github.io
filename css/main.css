@@ -156,7 +156,7 @@ header a.active {
   flex-direction: column;
   justify-content: center;
 }
-#home div h1 {
+#home div h2 {
   font-size: 3em;
   margin: 0.8em 0 0.5em 0;
   font-weight: 800;
@@ -205,7 +205,7 @@ header a.active {
     width: 78%;
     max-width: 500px;
   }
-  #home div h1 {
+  #home div h2 {
     font-size: calc(3vw + 1.1em);
     margin: 1em auto 20px auto;
     letter-spacing: 1px;
