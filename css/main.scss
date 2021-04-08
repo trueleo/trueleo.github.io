@@ -80,7 +80,7 @@ header {
 .scroller {
     overflow-y: scroll;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: block mandatory;
     scrollbar-width: none;
 
     section {
@@ -244,29 +244,89 @@ header {
 
     grid-template-areas:
     ".     .        .     ."
-    ".   left right   ."
+    ".   left     right   ."
     ".     .        .     .";
 
     .left {
+        scroll-snap-align: none;
         grid-area: left;
         justify-self: center;
         align-self: center;
-        padding: 1em 2em 1em 1.3em;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: auto;
+        flex-flow: column nowrap;
+        scrollbar-width: none;
+        scroll-snap-type: y mandatory;
 
         h2 {
-            font-size: 2.5em;
+            font-size: 2.3em;
             font-weight: 800;
-            margin: 1em 0 1em 0;
+            margin: 1em 0 0 0;
         }
+
         ul {
-            font-size: 1.4em;
-            ::marker {
-                font-size: 1.2em;
-            }
+            font-size: 1em;
+            list-style-type: none;
+            padding-left: 0;
             li {
-                margin-bottom: 0.4em;
-                padding-left: 0.3em;
+                background-color: #fdfdfd;
+                color: #1e313f;
+                overflow-y: auto;
             }
+        }
+
+        .cro {
+            width: 100%;
+            height: 100%;
+            padding: 1em 2em;
+            box-sizing: border-box;
+            display: flex;
+            flex: none;
+            flex-direction: column;
+            box-sizing: border-box;
+            scroll-snap-stop: always;
+            scroll-snap-align: start;
+            justify-content: center;
+        }
+
+        .skill li{
+            font-size: 1.1em;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0.4em;
+            margin-right: 0.2em;
+            padding: 0.3em 0.7em;
+            display: inline-block;
+            border-radius: 60px;
+            -webkit-border-radius: 60px;
+            -moz-border-radius: 60px;
+            -ms-border-radius: 60px;
+            -o-border-radius: 60px;
+        }
+
+        .project li, .school li{
+            strong {
+                display: inline-block;
+                margin-bottom: 0.3em;
+            }
+            p {
+                margin: unset;
+                padding: unset;
+                padding-left: 1em;
+            }
+            background-color: unset;
+            color: #ffffff;
+            padding: 0.4em 0.8em;
+            text-align: left;
+            display: block;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            margin-bottom: 1em;
         }
     }
 
@@ -301,33 +361,39 @@ header {
 
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        padding-bottom: 4em;
 
         .left {
             justify-self: unset;
             align-self: unset;
             padding: unset;
-            padding-left: 10%;
-            font-size: 0.7rem;
-            h2 {
-                // font-size: 2em;
-                margin: 0;
-                padding-right: 30px;
-            }
-            ul{
-                // font-size: 1.2em;
+            width: unset;
+            padding-left: 5%;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-evenly;
+            overflow: hidden;
+            padding-bottom: 3em;
+
+            .cro {
+                height: unset;
+                flex: initial;
                 padding: unset;
-                margin-left: 1.2rem ;
+                h2 {
+                    margin: unset;
+                }
+                ul {
+                    margin: 0;
+                }
+            }
+            .project {
+                li {
+                    margin: 0;
+                }
             }
         }
 
         .right {
-            $size: calc(27vw + 5em);
-            height: $size;
-            width: $size;
-            border: 6px solid rgba(59, 59, 59, 0.151);
-            margin-top: -10%;
+            display: none;
         }
     }
 }
