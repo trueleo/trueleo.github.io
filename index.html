@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark transition-colors">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hi, My name is Satyam Singh also known by alias trueleo. I am currently studying computer science at National Institute Of Technology Raipur.">
     <title>Satyam Singh</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/final.css">
 </head>
-<body>
-<header>
-    <a id="nav_home" onclick="javascript:gotolink('home');">home</a>
-    <a id="nav_about" onclick="javascript:gotolink('about');">about</a>
-    <a id="nav_contact" onclick="javascript:gotolink('contact');">contact</a>
+<body class="bg-white-100 relative lg:max-w-7xl w-full h-full m-auto md:border-x-2 border-dashed">
+<h1 id="themeswitch" class="absolute p-5 left-5 z-20 cursor-pointer" onclick="toggleTheme()">light</h1>
+<header class="absolute right-0 bottom-0 md:bottom-[unset] space-x-2 p-5 z-10">
+    <a id="nav_home" class="navigation decoration-transparent cursor-pointer rounded-full px-3 py-2" onclick="javascript:gotolink('home');">home</a>
+    <a id="nav_about" class="navigation decoration-transparent cursor-pointer rounded-full px-3 py-2 " onclick="javascript:gotolink('about');">about</a>
+    <a id="nav_contact" class="navigation decoration-transparent cursor-pointer rounded-full px-3 py-2 " onclick="javascript:gotolink('contact');">contact</a>
 </header>
 <article class="scroller">
-<section id="home">
-    <h4 class="barcode">
-        trueleo
-    </h4>
-    <img src="./assets/leopfp.png" alt="avatar">
-    <div>
-        <h2 class="hidden">Satyam Singh</h2>
-        <p class="hidden">Hi, I am a student, developer and designer who is currently living in Raipur City, Chhattisgarh.
-         I like creating new things and have a genuine liking for digital products and opensource. </p>
+<section id="home" 
+    class="relative flex flex-col md:flex-row justify-center md:justify-evenly items-center md:space-x-8 px-5"
+> 
+    <img src="./assets/leopfp.png" alt="avatar" class="rounded-full w-1/2 md:w-72 border-4">
+    <div class="space-y-3 mt-10 md:mt-0 fade trans">
+        <h2 class="text-4xl text-center md:text-left font-extrabold tracking-wide">Satyam Singh</h2>
+        <p class="text-center md:text-left max-w-md">Hi, I am a student, developer and designer who is currently living in Raipur City, Chhattisgarh.
+            I like creating new things and have a genuine liking for digital products and opensource. </p>
     </div>
-</section>
-<section id="about">
-     <h2 class="leftheader">about</h2>
-        <div class="left hidden">
-            <div class="cro skill">
-                <h2>
+        <h4 class="barcode absolute bottom-0 left-0 p-4">
+            trueleo
+        </h4>
+    </section>
+<section id="about" class="relative flex flex-col md:flex-row justify-evenly items-center w-full px-5">
+    <h2 class="absolute p-3 top-0 left-0 hidden">about</h2>
+    <div class="left flex flex-col justify-center h-full space-y-20 md:h-auto md:max-w-md fade trans">
+            <div class="cro skill space-y-3">
+                <h2 class="font-bold text-3xl ">
                     Skills
                 </h2>
-                <ul>
+                <ul class="px-1 space-x-1 space-y-2"> 
                     <li> Python </li>
                     <li> Flask </li>
                     <li> Rust </li>
@@ -44,8 +47,8 @@
                     <li> C++ </li>
                 </ul>
             </div>
-            <div class="cro project">
-                <h2>Projects</h2>
+            <div class="cro project hidden">
+                <h2 class="font-bold text-3xl tracking-wide ">Projects</h2>
                 <ul>
                     <li>
                         <strong> &SmallCircle; &ThinSpace; Relop WebApp</strong>
@@ -61,28 +64,28 @@
                     </li>
                 </ul>
             </div>
-            <div class="cro school">
-                <h2>Education</h2>
-                <ul>
+            <div class="cro school space-y-4">
+                <h2 class="font-bold text-3xl ">Education</h2>
+                <ul class="px-1 space-y-3">
                     <li>
                         <strong>&SmallCircle; &ThinSpace; Masters In Computer Application </strong>
                         <p>National Institute Of Technology Raipur (2020 - 2023)</p>
                     </li>
                     <li>
                         <strong>&SmallCircle; &ThinSpace; Bachelors In Computer Application </strong>
-                        <p>Pt. Ravishankar Shukla University, Raipur (2017 - 2020)</p>
+                        <p>Pt. Ravishankar Shukla University Raipur (2017 - 2020)</p>
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class="right">
-            <img src="./assets/earth.svg" alt="">
-        </div>
+    </div>
+    <div class="planet hidden md:flex">
+        <img src="./assets/earth.svg" alt="">
+    </div>
 </section>
-<section id="contact">
-    <h2 class="leftheader">contact</h2>
-    <div class="cards">
-        <div class="contact">
+<section id="contact" class="relative flex justify-center">
+    <h2 class=" p-3 top-0 hidden">contact</h2>
+    <div class="cards flex flex-col justify-center text-lg fade trans">
+        <div class="hidden contact">
             <img src="./assets/linkedin-logo.png" alt="">
             LinkedIn
             <a rel="external" href="https://www.linkedin.com/in/trueleo/" target="_blank" class="cardlink"></a>
@@ -109,6 +112,16 @@
 </article>
 
 <script>
+
+    function toggleTheme() {
+        
+        let elem = document.documentElement.classList
+        elem.toggle('dark')
+
+        document.getElementById("themeswitch").innerHTML = elem.contains('dark') ? 'light' : 'dark' 
+        
+    }
+
     var nav = {
         'home': document.getElementById('nav_home'),
         'about': document.getElementById('nav_about'),
