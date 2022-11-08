@@ -141,7 +141,7 @@ body {
   top: 50%;
 }
 
-#contact>div {
+#contact #contact-holder {
   z-index: 2;
 }
 
